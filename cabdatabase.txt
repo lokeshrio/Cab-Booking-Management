@@ -1,0 +1,36 @@
+create table customer(
+customer_id int  primary key auto_increment not null,
+username varchar(50) not null,
+mailid varchar(50),
+password varchar(50),
+mobile_no int not null);
+
+create table cab(
+cab_id int primary key auto_increment not null,
+reg_no int,
+cab_type varchar(50),
+driver_name varchar(50));
+
+
+create table cab_schedule( 
+id int primary key auto_increment not null,
+cab_from varchar(30),
+cab_to varchar(30),
+time int,
+date date,
+fare int not null,
+cab_id int,
+constraint FK_cab_cab_id foreign key(cab_id)
+references cab(cab_id) on delete set null);
+
+
+create table booking_information(
+booking_number int primary key,
+date_of_booking date,
+time_of_booking time,
+seats int default 2,
+cab_id int,
+customer_id int,
+constraint FK_cab_caab_id foreign key(cab_id) references cab(cab_id) on delete set null,
+constraint FK_customer_customer_id foreign key(customer_id) references customer(customer_id) on delete set null)
+
