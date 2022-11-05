@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+            margin:0;
+        }
+        body{
+            height:100vh;
+            width:100vw;
+            background-image: url(33110.webp);
+            background-size: cover;
+             background-repeat: no-repeat;
+           /*   object-fit: contain; */
+            
+        }
+
+
+    </style>
+
+    <div class="container-fluid" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;" >
+        <div class="row">
+        
+            <div class="col-sm-6 offset-sm-3">
+                <h1 class="text-center"style="font-family:sans-serif;color:YELLOW;">LOGIN</h1>
+    <form action="booking.html" onsubmit="validate(event)">
+    <input type="text" id="username" placeholder="name"><br><br>
+    <input type="text" id="password" placeholder="password"><br><br>
+    <input type="text" id="cpassword" placeholder="confirm password"><br><br>
+    <h1 id="error"></h1>
+    <a href="booking.html">
+        
+     
+    <button class="btn btn-sucess" type = "submit" a href="booking.html">SUBMIT</button></a>
+
+</form>
+
+
+<script>
+function validate(e){
+        let error = document.getElementById('error')
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+        
+
+        let database = {
+            username :"customer@1",
+            password:"cab123"
+        }
+        if(username == database.username & password == database.password){
+            console.log('success')
+        }
+        else{
+            error.innerHTML = "please provide correct user name and password"
+            e.preventDefault()
+        }
+    }
+    </script>
+</body>
+
+</html>
